@@ -1,10 +1,10 @@
 using SoapCore;
-using SoapTestApplication.BusinessLogic;
+using SoapTestApplication.SoapService;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSoapCore();
-builder.Services.AddScoped<ISoapService, SoapService>();
+builder.Services.AddScoped<ISumService, SumService>();
 
 var app = builder.Build();
 
@@ -12,7 +12,7 @@ app.UseRouting();
 
 app.UseEndpoints(endpoints =>
 {
-    endpoints.UseSoapEndpoint<ISoapService>("/Service.asmx", new SoapEncoderOptions(),
+    endpoints.UseSoapEndpoint<ISumService>("/mockServer", new SoapEncoderOptions(),
         SoapSerializer.XmlSerializer);
 });
 

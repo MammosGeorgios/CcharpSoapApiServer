@@ -1,16 +1,16 @@
 using System.ServiceModel;
 
-namespace SoapTestApplication.BusinessLogic
+namespace SoapTestApplication.SoapService
 
 {
     [ServiceContract]
-    public interface ISoapService
+    public interface ISumService
     {
         [OperationContract]
         string Sum(int num1, int num2);
     }
 
-    public class SoapService : ISoapService
+    public class SumService : ISumService
     {
         public string Sum(int num1, int num2)
         {
