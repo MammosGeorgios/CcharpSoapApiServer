@@ -1,0 +1,6 @@
+@WebApplication1_HostAddress = https://localhost:7128/
+
+GET {{WebApplication1_HostAddress}}/Service.asmx/Sum?num1=1&num2=3
+Accept: application/json
+
+###
